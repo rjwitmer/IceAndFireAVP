@@ -8,33 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		CC41CA672EBB9275000C2C1D /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = CC41CA662EBB9275000C2C1D /* RealityKitContent */; };
+		CC41CA7A2EBB92BB000C2C1D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA762EBB92BB000C2C1D /* LaunchView.swift */; };
+		CC41CA7B2EBB92BB000C2C1D /* IceAndFireAVPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */; };
+		CC41CA7C2EBB92BB000C2C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC41CA752EBB92BB000C2C1D /* Assets.xcassets */; };
+		CC41CA7F2EBB9325000C2C1D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA7E2EBB9325000C2C1D /* Character.swift */; };
+		CC41CA822EBB9B15000C2C1D /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA812EBB9B15000C2C1D /* CharacterListView.swift */; };
+		CC41CA842EBB9D6F000C2C1D /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA832EBB9D6F000C2C1D /* BookListView.swift */; };
+		CC41CA862EBB9DAF000C2C1D /* HouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */; };
+		CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA882EBB9E89000C2C1D /* Book.swift */; };
+		CC41CA8B2EBB9E9A000C2C1D /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA8A2EBB9E9A000C2C1D /* House.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC41CA612EBB9275000C2C1D /* IceAndFireAVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceAndFireAVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC41CA652EBB9275000C2C1D /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		CC41CA752EBB92BB000C2C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC41CA762EBB92BB000C2C1D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceAndFireAVPApp.swift; sourceTree = "<group>"; };
+		CC41CA782EBB92BB000C2C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC41CA7E2EBB9325000C2C1D /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		CC41CA812EBB9B15000C2C1D /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		CC41CA832EBB9D6F000C2C1D /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
+		CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListView.swift; sourceTree = "<group>"; };
+		CC41CA882EBB9E89000C2C1D /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		CC41CA8A2EBB9E9A000C2C1D /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CC41CA6F2EBB9275000C2C1D /* Exceptions for "IceAndFireAVP" folder in "IceAndFireAVP" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = CC41CA602EBB9275000C2C1D /* IceAndFireAVP */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CC41CA632EBB9275000C2C1D /* IceAndFireAVP */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CC41CA6F2EBB9275000C2C1D /* Exceptions for "IceAndFireAVP" folder in "IceAndFireAVP" target */,
-			);
-			path = IceAndFireAVP;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CC41CA5E2EBB9275000C2C1D /* Frameworks */ = {
@@ -51,7 +49,7 @@
 		CC41CA582EBB9275000C2C1D = {
 			isa = PBXGroup;
 			children = (
-				CC41CA632EBB9275000C2C1D /* IceAndFireAVP */,
+				CC41CA792EBB92BB000C2C1D /* IceAndFireAVP */,
 				CC41CA642EBB9275000C2C1D /* Packages */,
 				CC41CA622EBB9275000C2C1D /* Products */,
 			);
@@ -73,6 +71,39 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		CC41CA792EBB92BB000C2C1D /* IceAndFireAVP */ = {
+			isa = PBXGroup;
+			children = (
+				CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */,
+				CC41CA752EBB92BB000C2C1D /* Assets.xcassets */,
+				CC41CA802EBB9ADE000C2C1D /* Views */,
+				CC41CA782EBB92BB000C2C1D /* Info.plist */,
+				CC41CA872EBB9E5D000C2C1D /* Classes */,
+			);
+			path = IceAndFireAVP;
+			sourceTree = "<group>";
+		};
+		CC41CA802EBB9ADE000C2C1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC41CA762EBB92BB000C2C1D /* LaunchView.swift */,
+				CC41CA812EBB9B15000C2C1D /* CharacterListView.swift */,
+				CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */,
+				CC41CA832EBB9D6F000C2C1D /* BookListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC41CA872EBB9E5D000C2C1D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CC41CA7E2EBB9325000C2C1D /* Character.swift */,
+				CC41CA882EBB9E89000C2C1D /* Book.swift */,
+				CC41CA8A2EBB9E9A000C2C1D /* House.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,9 +118,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CC41CA632EBB9275000C2C1D /* IceAndFireAVP */,
 			);
 			name = IceAndFireAVP;
 			packageProductDependencies = (
@@ -138,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC41CA7C2EBB92BB000C2C1D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC41CA7F2EBB9325000C2C1D /* Character.swift in Sources */,
+				CC41CA862EBB9DAF000C2C1D /* HouseListView.swift in Sources */,
+				CC41CA8B2EBB9E9A000C2C1D /* House.swift in Sources */,
+				CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */,
+				CC41CA7A2EBB92BB000C2C1D /* LaunchView.swift in Sources */,
+				CC41CA842EBB9D6F000C2C1D /* BookListView.swift in Sources */,
+				CC41CA822EBB9B15000C2C1D /* CharacterListView.swift in Sources */,
+				CC41CA7B2EBB92BB000C2C1D /* IceAndFireAVPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
