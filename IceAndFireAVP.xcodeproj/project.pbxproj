@@ -17,6 +17,8 @@
 		CC41CA862EBB9DAF000C2C1D /* HouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */; };
 		CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA882EBB9E89000C2C1D /* Book.swift */; };
 		CC41CA8B2EBB9E9A000C2C1D /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA8A2EBB9E9A000C2C1D /* House.swift */; };
+		CC41CA8D2EBCE15E000C2C1D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA8C2EBCE15E000C2C1D /* NetworkService.swift */; };
+		CC41CA922EBCEA71000C2C1D /* BooksVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA912EBCEA71000C2C1D /* BooksVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListView.swift; sourceTree = "<group>"; };
 		CC41CA882EBB9E89000C2C1D /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		CC41CA8A2EBB9E9A000C2C1D /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		CC41CA8C2EBCE15E000C2C1D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CC41CA912EBCEA71000C2C1D /* BooksVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */,
-				CC41CA752EBB92BB000C2C1D /* Assets.xcassets */,
-				CC41CA802EBB9ADE000C2C1D /* Views */,
 				CC41CA782EBB92BB000C2C1D /* Info.plist */,
+				CC41CA752EBB92BB000C2C1D /* Assets.xcassets */,
+				CC41CA8E2EBCEA14000C2C1D /* ViewModels */,
+				CC41CA802EBB9ADE000C2C1D /* Views */,
 				CC41CA872EBB9E5D000C2C1D /* Classes */,
 			);
 			path = IceAndFireAVP;
@@ -100,8 +105,17 @@
 				CC41CA7E2EBB9325000C2C1D /* Character.swift */,
 				CC41CA882EBB9E89000C2C1D /* Book.swift */,
 				CC41CA8A2EBB9E9A000C2C1D /* House.swift */,
+				CC41CA8C2EBCE15E000C2C1D /* NetworkService.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		CC41CA8E2EBCEA14000C2C1D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CC41CA912EBCEA71000C2C1D /* BooksVM.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +194,9 @@
 				CC41CA7F2EBB9325000C2C1D /* Character.swift in Sources */,
 				CC41CA862EBB9DAF000C2C1D /* HouseListView.swift in Sources */,
 				CC41CA8B2EBB9E9A000C2C1D /* House.swift in Sources */,
+				CC41CA922EBCEA71000C2C1D /* BooksVM.swift in Sources */,
 				CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */,
+				CC41CA8D2EBCE15E000C2C1D /* NetworkService.swift in Sources */,
 				CC41CA7A2EBB92BB000C2C1D /* LaunchView.swift in Sources */,
 				CC41CA842EBB9D6F000C2C1D /* BookListView.swift in Sources */,
 				CC41CA822EBB9B15000C2C1D /* CharacterListView.swift in Sources */,
