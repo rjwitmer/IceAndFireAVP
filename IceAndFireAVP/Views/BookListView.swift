@@ -10,10 +10,10 @@ import SwiftUI
 struct BookListView: View {
     @State private var searchText: String = ""
     @State var booksVM: BooksVM = BooksVM()
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        @Environment(\.dismiss) var dismiss
-        
+
         NavigationStack {
             ZStack {
                 List(searchResults) { book in
@@ -34,6 +34,7 @@ struct BookListView: View {
                 }
                 .listStyle(.automatic)
                 .navigationTitle(Text("Books:"))
+                .navigationBarBackButtonHidden(true)
                 .toolbar {
                     ToolbarItem(placement: .status) {
                         Text("Titles: \(searchResults.count) of \(booksVM.books.count)")

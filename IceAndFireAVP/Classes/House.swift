@@ -7,40 +7,26 @@
 
 import Foundation
 
-class House {
-    private var url: String
-    private var name: String
-    private var region: String
-    private var coatOfArms: String
-    private var words: String?
-    private var titles: [String]?
-    private var seats: [String]?
-    private var currentLord: String?
-    private var heir: String?
-    private var overlord: String?
-    private var founded: String?
-    private var founder: String?
-    private var diedOut: String?
-    private var ancestralWeapons: [String]?
-    private var cadetBranches: [String]?
-    private var swornMembers: [String]?
+class House: Codable, Identifiable {
+    let id: String = UUID().uuidString
+    let url: String
+    let name: String
+    let region: String
+    let coatOfArms: String
+    let words: String?
+    let titles: [String]?
+    let seats: [String]?
+    let currentLord: String?
+    let heir: String?
+    let overlord: String?
+    let founded: String?
+    let founder: String?
+    let diedOut: String?
+    let ancestralWeapons: [String]?
+    let cadetBranches: [String]?
+    let swornMembers: [String]?
     
-    init(url: String = "", name: String = "", region: String = "", coatOfArms: String = "", words: String? = nil, titles: [String]? = nil, seats: [String]? = nil, currentLord: String? = nil, heir: String? = nil, overlord: String? = nil, founded: String? = nil, founder: String? = nil, diedOut: String? = nil, ancestralWeapons: [String]? = nil, cadetBranches: [String]? = nil, swornMembers: [String]? = nil) {
-        self.url = url
-        self.name = name
-        self.region = region
-        self.coatOfArms = coatOfArms
-        self.words = words
-        self.titles = titles
-        self.seats = seats
-        self.currentLord = currentLord
-        self.heir = heir
-        self.overlord = overlord
-        self.founded = founded
-        self.founder = founder
-        self.diedOut = diedOut
-        self.ancestralWeapons = ancestralWeapons
-        self.cadetBranches = cadetBranches
-        self.swornMembers = swornMembers
+    enum CodingKeys: String, CodingKey {
+        case url, name, region, coatOfArms, words, titles, seats, currentLord, heir, overlord, founded, founder, diedOut, ancestralWeapons, cadetBranches, swornMembers
     }
 }

@@ -1,15 +1,15 @@
 //
-//  BooksVM.swift
+//  CharactersVM.swift
 //  IceAndFireAVP
 //
-//  Created by Bob Witmer on 2025-11-06.
+//  Created by Bob Witmer on 2025-11-07.
 //
 
 import Foundation
 
 @Observable
-class BooksVM {
-    var books: [Book] = []
+class CharactersVM {
+    var characters: [Character] = []
     var doneLoading: Bool = false
     var errorMessage: String?
     
@@ -22,7 +22,7 @@ class BooksVM {
         
         Task {
             do {
-                let decodedData = try await networkService.fetchBookData()
+                let decodedData = try await networkService.fetchCharacterData()
                 DispatchQueue.main.async {
                     if decodedData.count == 0 {
                         self.doneLoading = true
@@ -30,11 +30,10 @@ class BooksVM {
                     } else {
                         print("👻 Got data")
                         
-                        self.books = decodedData
-                        print("Total Books: \(self.books.count)")
+                        self.characters = self.characters + decodedData
+                        print("Total Characters: \(self.characters.count)")
 
                         self.isLoading = false
-//                        print("\(self.books.last?.name ?? "No Name")")
                     }
                     
                 }

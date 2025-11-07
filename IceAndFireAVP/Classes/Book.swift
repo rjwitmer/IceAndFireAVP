@@ -8,32 +8,20 @@
 import Foundation
 
 class Book: Codable, Identifiable {
+    let id: String = UUID().uuidString
     let url: String
     let name: String
-//    var isbn: String
-//    var authors: [String]
-//    var numberOfPages: Int
-//    var publisher: String
-//    var country: String
-//    var mediaType: String
-//    var released: String
-//    var character: [String]
-//    var povCharacters: [String]
-    init(url: String = "", name: String = "") {
-        self.url = url
-        self.name = name
+    let isbn: String
+    let authors: [String]
+    let numberOfPages: Int
+    let publisher: String
+    let country: String
+    let mediaType: String
+    let released: String
+    let characters: [String]
+    let povCharacters: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case url, name, isbn, authors, numberOfPages, publisher, country, mediaType, released, characters, povCharacters
     }
-//    init(url: String = "", name: String = "", isbn: String = "", authors: [String] = [], numberOfPages: Int = 0, publisher: String = "", country: String = "", mediaType: String = "", released: String = "", character: [String] = [], povCharacters: [String] = []) {
-//        self.url = url
-//        self.name = name
-//        self.isbn = isbn
-//        self.authors = authors
-//        self.numberOfPages = numberOfPages
-//        self.publisher = publisher
-//        self.country = country
-//        self.mediaType = mediaType
-//        self.released = released
-//        self.character = character
-//        self.povCharacters = povCharacters
-//    }
 }
