@@ -16,6 +16,8 @@ class NetworkService {
     var pageBook: Int = 1 // Book List page number
     var pageHouse: Int = 1 // House List page number
     var pageCharacter: Int = 1 // Character List page number
+    var houseIsDoneLoading: Bool = false
+    var characterIsDoneLoading: Bool = false
     let pageSize: Int = 50 // Maximum API page size
     private let bookListURL: String = "https://anapioficeandfire.com/api/books"
     private let houseListURL: String = "https://anapioficeandfire.com/api/houses"
@@ -68,8 +70,13 @@ class NetworkService {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let characters = try decoder.decode([Character].self, from: data)
-        pageCharacter += 1
-        return characters
+        if characters.isEmpty {
+            characterIsDoneLoading = true
+            return []
+        } else {
+            pageCharacter += 1
+            return characters
+        }
     }
     
     func fetchHouseData() async throws -> [House] {
@@ -90,8 +97,33 @@ class NetworkService {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let houses = try decoder.decode([House].self, from: data)
-        pageHouse += 1
-        return houses
+        if houses.isEmpty {
+            houseIsDoneLoading = true
+            return []
+        } else {
+            pageHouse += 1
+            return houses
+        }
+
+    }
+    
+    func loadAllCharacters() async throws -> [Character] {
+        
+        var allCharacters: [Character] = []
+        while !characterIsDoneLoading {
+            let moreCharacters = try await self.fetchCharacterData()
+            allCharacters.append(contentsOf: moreCharacters)
+        }
+        return allCharacters
+    }
+    
+    func loadAllHouses() async throws -> [House] {
+        var allHouses: [House] = []
+        while !houseIsDoneLoading {
+            let moreHouses = try await self.fetchHouseData()
+            allHouses.append(contentsOf: moreHouses)
+        }
+        return allHouses
     }
     
     enum NetworkError: Error, LocalizedError {

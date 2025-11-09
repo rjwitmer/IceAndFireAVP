@@ -47,4 +47,11 @@ class CharactersVM {
         }
     }
     
+    func loadAll() {
+        
+        Task {
+            self.characters = try await networkService.loadAllCharacters()
+        }
+    }
+    
 }

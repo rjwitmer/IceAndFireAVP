@@ -18,18 +18,10 @@ struct CharacterListView: View {
                     VStack {
                         
                         NavigationLink {
-                            //                            CharacterDetailView(character: book)
+                            CharacterDetailView(character: character)
                         } label: {
-                            if character.name!.isEmpty && character.aliases!.first!.isEmpty {
-                                Text("Unknown Name")
-                                    .font(.title2)
-                            } else if character.name!.isEmpty {
-                                Text(character.aliases?.first ?? "Unknown Name")
-                                    .font(.title2)
-                            } else {
-                                Text(character.name!)
-                                    .font(.title2)
-                            }
+                            Text(nameOrAlias(name: character.name!, aliases: character.aliases!))
+                                .font(.title2)
                         }
                         
                         Spacer()
@@ -53,14 +45,14 @@ struct CharacterListView: View {
                         }
                         
                     }
-                    //                                        ToolbarItem(placement: .bottomBar) {
-                    //                                            Button("Load All") {
-                    //                                                Task {
-                    //                                                    await characterVM.loadAll()
-                    //                                                }
-                    //                                            }
-                    //
-                    //                                        }
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Load All") {
+                            Task {
+                                charactersVM.loadAll()
+                            }
+                        }
+                        
+                    }
                     //                                        ToolbarItem(placement: .bottomBar) {
                     //                                            Button("Next Page") {
                     //                                                Task {
@@ -83,7 +75,7 @@ struct CharacterListView: View {
             }
             .padding()
             
-
+            
         }
     }
     var searchResults: [Character] {

@@ -21,6 +21,8 @@
 		CC41CA922EBCEA71000C2C1D /* BooksVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA912EBCEA71000C2C1D /* BooksVM.swift */; };
 		CC41CA942EBE5AF0000C2C1D /* CharactersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA932EBE5AF0000C2C1D /* CharactersVM.swift */; };
 		CC41CA962EBE5B10000C2C1D /* HousesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA952EBE5B10000C2C1D /* HousesVM.swift */; };
+		CC41CA982EC0E191000C2C1D /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA972EC0E191000C2C1D /* CharacterDetailView.swift */; };
+		CC41CA9A2EC0E922000C2C1D /* myFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA992EC0E922000C2C1D /* myFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		CC41CA912EBCEA71000C2C1D /* BooksVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksVM.swift; sourceTree = "<group>"; };
 		CC41CA932EBE5AF0000C2C1D /* CharactersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVM.swift; sourceTree = "<group>"; };
 		CC41CA952EBE5B10000C2C1D /* HousesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesVM.swift; sourceTree = "<group>"; };
+		CC41CA972EC0E191000C2C1D /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		CC41CA992EC0E922000C2C1D /* myFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */,
 				CC41CA782EBB92BB000C2C1D /* Info.plist */,
 				CC41CA752EBB92BB000C2C1D /* Assets.xcassets */,
+				CC41CA992EC0E922000C2C1D /* myFunctions.swift */,
 				CC41CA8E2EBCEA14000C2C1D /* ViewModels */,
 				CC41CA802EBB9ADE000C2C1D /* Views */,
 				CC41CA872EBB9E5D000C2C1D /* Classes */,
@@ -99,6 +104,7 @@
 				CC41CA812EBB9B15000C2C1D /* CharacterListView.swift */,
 				CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */,
 				CC41CA832EBB9D6F000C2C1D /* BookListView.swift */,
+				CC41CA972EC0E191000C2C1D /* CharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				CC41CA7F2EBB9325000C2C1D /* Character.swift in Sources */,
 				CC41CA862EBB9DAF000C2C1D /* HouseListView.swift in Sources */,
 				CC41CA8B2EBB9E9A000C2C1D /* House.swift in Sources */,
+				CC41CA982EC0E191000C2C1D /* CharacterDetailView.swift in Sources */,
 				CC41CA942EBE5AF0000C2C1D /* CharactersVM.swift in Sources */,
 				CC41CA922EBCEA71000C2C1D /* BooksVM.swift in Sources */,
 				CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */,
@@ -209,6 +216,7 @@
 				CC41CA822EBB9B15000C2C1D /* CharacterListView.swift in Sources */,
 				CC41CA7B2EBB92BB000C2C1D /* IceAndFireAVPApp.swift in Sources */,
 				CC41CA962EBE5B10000C2C1D /* HousesVM.swift in Sources */,
+				CC41CA9A2EC0E922000C2C1D /* myFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

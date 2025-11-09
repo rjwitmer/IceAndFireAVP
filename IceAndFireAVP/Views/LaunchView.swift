@@ -10,6 +10,7 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    @State public var characterPage: Int = 1
     let menu: [String] = ["Character Selection:", "Book Selection:", "House Selection:"]
     var body: some View {
         NavigationStack {
