@@ -7,7 +7,7 @@
 
 import Foundation
 
-class House: Codable, Identifiable {
+struct House: Codable, Identifiable {
     let id: String = UUID().uuidString
     let url: String
     let name: String
@@ -26,7 +26,7 @@ class House: Codable, Identifiable {
     let cadetBranches: [String]?
     let swornMembers: [String]?
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: CodingKey {
         case url, name, region, coatOfArms, words, titles, seats, currentLord, heir, overlord, founded, founder, diedOut, ancestralWeapons, cadetBranches, swornMembers
     }
 }

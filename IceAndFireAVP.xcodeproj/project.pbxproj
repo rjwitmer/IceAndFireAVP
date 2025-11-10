@@ -23,6 +23,8 @@
 		CC41CA962EBE5B10000C2C1D /* HousesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA952EBE5B10000C2C1D /* HousesVM.swift */; };
 		CC41CA982EC0E191000C2C1D /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA972EC0E191000C2C1D /* CharacterDetailView.swift */; };
 		CC41CA9A2EC0E922000C2C1D /* myFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA992EC0E922000C2C1D /* myFunctions.swift */; };
+		CC41CA9C2EC24B7E000C2C1D /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA9B2EC24B7E000C2C1D /* BookDetailView.swift */; };
+		CC41CA9E2EC24B94000C2C1D /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA9D2EC24B94000C2C1D /* HouseDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		CC41CA952EBE5B10000C2C1D /* HousesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesVM.swift; sourceTree = "<group>"; };
 		CC41CA972EC0E191000C2C1D /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		CC41CA992EC0E922000C2C1D /* myFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFunctions.swift; sourceTree = "<group>"; };
+		CC41CA9B2EC24B7E000C2C1D /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		CC41CA9D2EC24B94000C2C1D /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */,
 				CC41CA832EBB9D6F000C2C1D /* BookListView.swift */,
 				CC41CA972EC0E191000C2C1D /* CharacterDetailView.swift */,
+				CC41CA9B2EC24B7E000C2C1D /* BookDetailView.swift */,
+				CC41CA9D2EC24B94000C2C1D /* HouseDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,11 +211,13 @@
 			files = (
 				CC41CA7F2EBB9325000C2C1D /* Character.swift in Sources */,
 				CC41CA862EBB9DAF000C2C1D /* HouseListView.swift in Sources */,
+				CC41CA9E2EC24B94000C2C1D /* HouseDetailView.swift in Sources */,
 				CC41CA8B2EBB9E9A000C2C1D /* House.swift in Sources */,
 				CC41CA982EC0E191000C2C1D /* CharacterDetailView.swift in Sources */,
 				CC41CA942EBE5AF0000C2C1D /* CharactersVM.swift in Sources */,
 				CC41CA922EBCEA71000C2C1D /* BooksVM.swift in Sources */,
 				CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */,
+				CC41CA9C2EC24B7E000C2C1D /* BookDetailView.swift in Sources */,
 				CC41CA8D2EBCE15E000C2C1D /* NetworkService.swift in Sources */,
 				CC41CA7A2EBB92BB000C2C1D /* LaunchView.swift in Sources */,
 				CC41CA842EBB9D6F000C2C1D /* BookListView.swift in Sources */,

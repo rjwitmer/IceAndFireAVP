@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
+    @State private var selectTitle: Int = 0
+    @State private var selectAlias: Int = 0
+    @State private var selectTVSeries: Int = 0
+    @State private var selectActor: Int = 0
+    @State private var selectBook: Int = 0
+    @State private var selectHouse: Int = 0
     let character: Character
     var body: some View {
         VStack {
@@ -17,9 +23,9 @@ struct CharacterDetailView: View {
                 LazyVGrid(
                     columns: [
                         //                        GridItem(.fixed(600)),
+                        GridItem(.fixed(100)),
                         GridItem(.flexible(minimum: 50, maximum: .infinity)),
-                        GridItem(.flexible(minimum: 50, maximum: .infinity)),
-                        GridItem(.flexible(minimum: 50, maximum: .infinity)),
+                        GridItem(.fixed(100)),
                         GridItem(.flexible(minimum: 50, maximum: .infinity))
                     ],
                     alignment: .leading,
@@ -29,15 +35,39 @@ struct CharacterDetailView: View {
                     Text("Name:")
                         .foregroundStyle(.blue)
                         .bold()
-                    Text(character.name ?? "Unknown")
+                    if character.name == nil || character.name!.isEmpty {
+                        Text("Unknown")
+                    } else {
+                        Text(character.name!)
+                    }
                     Text("Gender:")
                         .foregroundStyle(.blue)
                         .bold()
                     Text(character.gender ?? "Unknown")
-                    Text("Culture:")
+                    Text("Aliases:")
                         .foregroundStyle(.blue)
                         .bold()
-                    Text(character.culture ?? "Unknown")
+                    if character.aliases!.count == 0 {
+                        Text("None")
+                    } else {
+                        Picker(selection: $selectAlias, label: Text("")) {
+                            ForEach(0..<character.aliases!.count, id: \.self) {
+                                Text("\(character.aliases![$0])")
+                            }
+                        }
+                    }
+                    Text("Titles:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    if character.titles!.count == 0 {
+                        Text("None")
+                    } else {
+                        Picker(selection: $selectTitle, label: Text("")) {
+                            ForEach(0..<character.titles!.count, id: \.self) {
+                                Text("\(character.titles![$0])")
+                            }
+                        }
+                    }
                     Text("Born:")
                         .foregroundStyle(.blue)
                         .bold()
@@ -46,28 +76,70 @@ struct CharacterDetailView: View {
                         .foregroundStyle(.blue)
                         .bold()
                     Text(character.died ?? "Alive")
-                    Text("Titles:")
+                    Text("Father:")
                         .foregroundStyle(.blue)
                         .bold()
-//                    Text("\(character.titles?.count ?? 0)")
-                    if character.titles!.count == 0 {
-                        Text("None")
-                    } else {
-                        List(character.titles!, id: \.self) { title in
-                            Text(title)
-                        }
-                    }
-                    Text("Aliases:")
+                    Text(character.father ?? "Unknown")
+                    Text("Mother:")
                         .foregroundStyle(.blue)
                         .bold()
-                    if character.aliases!.count == 0 {
+                    Text(character.mother ?? "Unknown")
+                    Text("Spouse:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    Text(character.spouse ?? "Unknown")
+                    Text("Culture:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    Text(character.culture ?? "Unknown")
+                    Text("TV Series:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    if character.tvSeries!.count == 0 {
                         Text("None")
                     } else {
-                        List(character.aliases!, id: \.self) { alias in
-                            Text(alias)
+                        Picker(selection: $selectTVSeries, label: Text("")) {
+                            ForEach(0..<character.tvSeries!.count, id: \.self) {
+                                Text("\(character.tvSeries![$0])")
+                            }
                         }
                     }
-
+                    Text("Played By:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    if character.playedBy!.count == 0 {
+                        Text("None")
+                    } else {
+                        Picker(selection: $selectActor, label: Text("")) {
+                            ForEach(0..<character.playedBy!.count, id: \.self) {
+                                Text("\(character.playedBy![$0])")
+                            }
+                        }
+                    }
+                    Text("Books:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    if character.books!.count == 0 {
+                        Text("None")
+                    } else {
+                        Picker(selection: $selectBook, label: Text("")) {
+                            ForEach(0..<character.books!.count, id: \.self) {
+                                Text("\(character.books![$0])")
+                            }
+                        }
+                    }
+                    Text("Allegiances:")
+                        .foregroundStyle(.blue)
+                        .bold()
+                    if character.allegiances!.count == 0 {
+                        Text("None")
+                    } else {
+                        Picker(selection: $selectHouse, label: Text("")) {
+                            ForEach(0..<character.allegiances!.count, id: \.self) {
+                                Text("\(character.allegiances![$0])")
+                            }
+                        }
+                    }
                 }
             }
             .padding()

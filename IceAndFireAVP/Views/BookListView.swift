@@ -20,7 +20,7 @@ struct BookListView: View {
                     VStack {
                         
                         NavigationLink {
-                            //                            CharacterDetailView(character: book)
+                            BookDetailView(book: book)
                         } label: {
                             Text(book.name)
                                 .font(.title2)

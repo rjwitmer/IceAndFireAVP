@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Book: Codable, Identifiable {
+struct Book: Codable, Identifiable {
     let id: String = UUID().uuidString
     let url: String
     let name: String
@@ -21,7 +21,8 @@ class Book: Codable, Identifiable {
     let characters: [String]
     let povCharacters: [String]
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: CodingKey {
         case url, name, isbn, authors, numberOfPages, publisher, country, mediaType, released, characters, povCharacters
     }
+    
 }
