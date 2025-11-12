@@ -7,10 +7,25 @@
 
 import SwiftUI
 
+enum CharacterListType: CaseIterable, Identifiable, CustomStringConvertible {
+    case povCharacters
+    case characters
+    case none
+    var id: Self { self }
+    var description: String {
+        switch self {
+        case .povCharacters: return "Point of View Characters"
+        case .characters: return "All Characters"
+        case .none: return "None"
+        }
+    }
+}
+
 struct BookDetailView: View {
     let book: Book
     @State private var selectAuthor: Int = 0
-    
+    @State private var characterListSelection: CharacterListType = .povCharacters
+
     var body: some View {
         VStack {
             Text(book.name)
@@ -70,37 +85,36 @@ struct BookDetailView: View {
                     Text("\(book.numberOfPages)")
                 }
                 .padding()
-                
-                
-                
             }
-            .padding()
-            Text("Point of View Characters in this book: \(book.povCharacters.count)")
-                .foregroundStyle(Color.blue)
-                .font(.headline)
-            List(book.povCharacters, id: \.self) { character in
-                Text(character)
-            }
-            
-            Text("Characters in this book: \(book.characters.count)")
-                .foregroundStyle(Color.blue)
-                .font(.headline)
-            List(book.characters, id: \.self) { character in
-                Text(character)
-            }
-        }
-    }
-}
 
-// Function to convert the API 'ISO8601' released date string to just a date
-func convertDate(date: String) -> String {
-    var fixedDate = date
-    // Insert '00+00:' into the book.released date so it can be parsed by the Swift ISO8601 formatter
-    fixedDate.insert(contentsOf: "00+00:", at: date.index(date.endIndex, offsetBy: -2))
-    if let newDate = ISO8601DateFormatter().date(from: fixedDate) {
-        return newDate.formatted(date: .abbreviated, time: .omitted)
-    } else {
-        return "Invalid Date"
+            Picker("Character List Selection:", selection: $characterListSelection) {
+                ForEach(CharacterListType.allCases) {
+                    Text($0.description)
+                }
+            }
+            .pickerStyle(.segmented)
+            if characterListSelection == .characters {
+                Text("Total \(book.characters.count) Characters in this book:")
+                    .foregroundStyle(Color.blue)
+                    .font(.headline)
+                List(book.characters, id: \.self) { character in
+                    Text(character)
+                }
+            } else if characterListSelection == .povCharacters {
+                Text("Total \(book.povCharacters.count) Point of View Characters in this book:")
+                    .foregroundStyle(Color.blue)
+                    .font(.headline)
+                List(book.povCharacters, id: \.self) { character in
+                    Text(character)
+                }
+            } else {
+                Text("Disabled:")
+                Rectangle()
+                    .opacity(0)
+            }
+            Spacer()
+
+        }
     }
 }
 

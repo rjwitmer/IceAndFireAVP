@@ -19,7 +19,7 @@ struct HouseListView: View {
                     VStack {
                         
                         NavigationLink {
-                            //                            CharacterDetailView(character: book)
+                            HouseDetailView(house: house)
                         } label: {
                             Text(house.name)
                                 .font(.title2)
