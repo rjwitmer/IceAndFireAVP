@@ -35,6 +35,7 @@ class BooksVM {
 
                         self.isLoading = false
 //                        print("\(self.books.last?.name ?? "No Name")")
+                        self.doneLoading = true
                     }
                     
                 }

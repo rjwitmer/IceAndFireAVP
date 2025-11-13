@@ -47,4 +47,10 @@ class HousesVM {
         }
     }
     
+    func loadAll() {        
+        Task {
+            self.houses = try await networkService.loadAllHouses()
+        }
+        doneLoading = true
+    }
 }

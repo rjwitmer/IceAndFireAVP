@@ -22,6 +22,7 @@ enum CharacterListType: CaseIterable, Identifiable, CustomStringConvertible {
 }
 
 struct BookDetailView: View {
+    @Environment(CharactersVM.self) var charactersVM
     let book: Book
     @State private var selectAuthor: Int = 0
     @State private var characterListSelection: CharacterListType = .povCharacters
@@ -98,14 +99,14 @@ struct BookDetailView: View {
                     .foregroundStyle(Color.blue)
                     .font(.headline)
                 List(book.characters, id: \.self) { character in
-                    Text(character)
+                    Text(characterNameFromURL(characters: charactersVM.characters, url: character))
                 }
             } else if characterListSelection == .povCharacters {
                 Text("Total \(book.povCharacters.count) Point of View Characters in this book:")
                     .foregroundStyle(Color.blue)
                     .font(.headline)
                 List(book.povCharacters, id: \.self) { character in
-                    Text(character)
+                    Text(characterNameFromURL(characters: charactersVM.characters, url: character))
                 }
             } else {
                 Text("Disabled:")
@@ -118,16 +119,17 @@ struct BookDetailView: View {
     }
 }
 
-#Preview {
-    BookDetailView(book: Book(url: "https://anapioficeandfire.com/api/books/1",
-                              name: "A Sample Book",
-                              isbn: "978-00000000000",
-                              authors: ["George R.R. Martin"],
-                              numberOfPages: 999,
-                              publisher: "Sample Publisher",
-                              country: "Canada",
-                              mediaType: "Hardcover",
-                              released: "1996-08-01T00:00:00",
-                              characters: ["Character 1", "Character 2"],
-                              povCharacters: ["Character 1"]))
-}
+// Intentionally Disabled because of the use @Environment variables
+//#Preview {
+//    BookDetailView(book: Book(url: "https://anapioficeandfire.com/api/books/1",
+//                              name: "A Sample Book",
+//                              isbn: "978-00000000000",
+//                              authors: ["George R.R. Martin"],
+//                              numberOfPages: 999,
+//                              publisher: "Sample Publisher",
+//                              country: "Canada",
+//                              mediaType: "Hardcover",
+//                              released: "1996-08-01T00:00:00",
+//                              characters: ["Character 1", "Character 2"],
+//                              povCharacters: ["Character 1"]))
+//}

@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct HouseListView: View {
-    @State private var searchText: String = ""
-    @State var housesVM: HousesVM = HousesVM()
     @Environment(\.dismiss) var dismiss
+    @Environment(CharactersVM.self) var charactersVM
+    @Environment(HousesVM.self) var housesVM
+    @State private var searchText: String = ""
+    // housesVM now passed from LaunchView
+//    @State var housesVM: HousesVM = HousesVM()
+
     
     var body: some View {
         NavigationStack {
@@ -20,6 +24,8 @@ struct HouseListView: View {
                         
                         NavigationLink {
                             HouseDetailView(house: house)
+                                .environment(charactersVM)
+                                .environment(housesVM)
                         } label: {
                             Text(house.name)
                                 .font(.title2)
@@ -71,8 +77,9 @@ struct HouseListView: View {
                 //            }
             }
             .task {
-                housesVM.getData()
-                print("Data Loaded --> Count: \(housesVM.houses.count)")
+                // housesVM is passed as an Environment variable from LaunchView
+//                housesVM.getData()
+//                print("Data Loaded --> Count: \(housesVM.houses.count)")
             }
             .padding()
             
@@ -90,6 +97,7 @@ struct HouseListView: View {
     }
 }
 
-#Preview {
-    HouseListView()
-}
+// Intentionally Disabled because of @Environment variables passed from LaunchView
+//#Preview {
+//    HouseListView()
+//}

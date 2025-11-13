@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct BookListView: View {
-    @State private var searchText: String = ""
-    @State var booksVM: BooksVM = BooksVM()
     @Environment(\.dismiss) var dismiss
+    @Environment(BooksVM.self) var booksVM
+    @Environment(CharactersVM.self) var charactersVM
+    @State private var searchText: String = ""
+    // booksVM is no an Environment variable passed from LaunchView
+//    @State var booksVM: BooksVM = BooksVM()
+
     
     var body: some View {
 
@@ -21,6 +25,7 @@ struct BookListView: View {
                         
                         NavigationLink {
                             BookDetailView(book: book)
+                                .environment(charactersVM)
                         } label: {
                             Text(book.name)
                                 .font(.title2)
@@ -72,8 +77,9 @@ struct BookListView: View {
                 //            }
             }
             .task {
-                booksVM.getData()
-                print("Data Loaded --> Count: \(booksVM.books.count)")
+                // booksVM is now passed from LaunchView as an Environment variable
+//                booksVM.getData()
+//                print("Data Loaded --> Count: \(booksVM.books.count)")
             }
             .padding()
             
@@ -93,6 +99,7 @@ struct BookListView: View {
     }
 }
 
-#Preview {
-    BookListView()
-}
+// Intentionally disabled becase booksVM is passed from LaunchView via an @Environment variable and WebApi is not available to Preview
+//#Preview {
+//    BookListView()
+//}

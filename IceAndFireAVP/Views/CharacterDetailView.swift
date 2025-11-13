@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
+    @Environment(BooksVM.self) var booksVM
+    @Environment(HousesVM.self) var housesVM
     @State private var selectTitle: Int = 0
     @State private var selectAlias: Int = 0
     @State private var selectTVSeries: Int = 0
@@ -124,7 +126,8 @@ struct CharacterDetailView: View {
                     } else {
                         Picker(selection: $selectBook, label: Text("")) {
                             ForEach(0..<character.books!.count, id: \.self) {
-                                Text("\(character.books![$0])")
+                                Text(bookNameFromURL(books: booksVM.books, url: character.books![$0]))
+//                                Text("\(character.books![$0])")
                             }
                         }
                     }
@@ -136,7 +139,8 @@ struct CharacterDetailView: View {
                     } else {
                         Picker(selection: $selectHouse, label: Text("")) {
                             ForEach(0..<character.allegiances!.count, id: \.self) {
-                                Text("\(character.allegiances![$0])")
+                                Text(houseNameFromURL(houses: housesVM.houses, url: character.allegiances![$0]))
+//                                Text("\(character.allegiances![$0])")
                             }
                         }
                     }
@@ -147,21 +151,22 @@ struct CharacterDetailView: View {
     }
 }
 
-#Preview {
-    CharacterDetailView(character: Character(url: "https://anapioficeandfire.com/api/characters/1",
-                                             name: "Dante of the Brampton",
-                                             gender: "Male",
-                                             culture: "Canine",
-                                             born: "Sept 11, 2014",
-                                             died: "",
-                                             titles: ["Alpha Male", "The Liver King"],
-                                             aliases: ["Good Boy", "My Buddy"],
-                                             father: "US Champion",
-                                             mother: "Canadian Champion",
-                                             spouse: "",
-                                             allegiances: ["https://anapioficeandfire.com/api/houses/362"],
-                                             books: ["https://anapioficeandfire.com/api/books/5"],
-                                             povBooks: [""],
-                                             tvSeries: [""],
-                                             playedBy: ["Direwolf"]))
-}
+// Intentionally disabled becase of the booksVM environment variable being used
+//#Preview {
+//    CharacterDetailView(character: Character(url: "https://anapioficeandfire.com/api/characters/1",
+//                                             name: "Dante of the Brampton",
+//                                             gender: "Male",
+//                                             culture: "Canine",
+//                                             born: "Sept 11, 2014",
+//                                             died: "",
+//                                             titles: ["Alpha Male", "The Liver King"],
+//                                             aliases: ["Good Boy", "My Buddy"],
+//                                             father: "US Champion",
+//                                             mother: "Canadian Champion",
+//                                             spouse: "",
+//                                             allegiances: ["https://anapioficeandfire.com/api/houses/362"],
+//                                             books: ["https://anapioficeandfire.com/api/books/5"],
+//                                             povBooks: [""],
+//                                             tvSeries: [""],
+//                                             playedBy: ["Direwolf"]))
+//}

@@ -52,6 +52,7 @@ class CharactersVM {
         Task {
             self.characters = try await networkService.loadAllCharacters()
         }
+        doneLoading = true
     }
     
 }

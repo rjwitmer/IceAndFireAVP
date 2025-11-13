@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC41CA672EBB9275000C2C1D /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = CC41CA662EBB9275000C2C1D /* RealityKitContent */; };
-		CC41CA7A2EBB92BB000C2C1D /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA762EBB92BB000C2C1D /* LaunchView.swift */; };
+		CC41CA7A2EBB92BB000C2C1D /*  LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA762EBB92BB000C2C1D /*  LaunchView.swift */; };
 		CC41CA7B2EBB92BB000C2C1D /* IceAndFireAVPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */; };
 		CC41CA7C2EBB92BB000C2C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC41CA752EBB92BB000C2C1D /* Assets.xcassets */; };
 		CC41CA7F2EBB9325000C2C1D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41CA7E2EBB9325000C2C1D /* Character.swift */; };
@@ -31,7 +31,7 @@
 		CC41CA612EBB9275000C2C1D /* IceAndFireAVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceAndFireAVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC41CA652EBB9275000C2C1D /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		CC41CA752EBB92BB000C2C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC41CA762EBB92BB000C2C1D /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		CC41CA762EBB92BB000C2C1D /*  LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " LaunchView.swift"; sourceTree = "<group>"; };
 		CC41CA772EBB92BB000C2C1D /* IceAndFireAVPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceAndFireAVPApp.swift; sourceTree = "<group>"; };
 		CC41CA782EBB92BB000C2C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC41CA7E2EBB9325000C2C1D /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		CC41CA802EBB9ADE000C2C1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CC41CA762EBB92BB000C2C1D /* LaunchView.swift */,
+				CC41CA762EBB92BB000C2C1D /*  LaunchView.swift */,
 				CC41CA812EBB9B15000C2C1D /* CharacterListView.swift */,
 				CC41CA852EBB9DAF000C2C1D /* HouseListView.swift */,
 				CC41CA832EBB9D6F000C2C1D /* BookListView.swift */,
@@ -219,7 +219,7 @@
 				CC41CA892EBB9E89000C2C1D /* Book.swift in Sources */,
 				CC41CA9C2EC24B7E000C2C1D /* BookDetailView.swift in Sources */,
 				CC41CA8D2EBCE15E000C2C1D /* NetworkService.swift in Sources */,
-				CC41CA7A2EBB92BB000C2C1D /* LaunchView.swift in Sources */,
+				CC41CA7A2EBB92BB000C2C1D /*  LaunchView.swift in Sources */,
 				CC41CA842EBB9D6F000C2C1D /* BookListView.swift in Sources */,
 				CC41CA822EBB9B15000C2C1D /* CharacterListView.swift in Sources */,
 				CC41CA7B2EBB92BB000C2C1D /* IceAndFireAVPApp.swift in Sources */,

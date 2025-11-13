@@ -9,7 +9,10 @@ import SwiftUI
 
 struct CharacterListView: View {
     @State private var searchText: String = ""
-    @State var charactersVM: CharactersVM = CharactersVM()
+//    @State var charactersVM: CharactersVM = CharactersVM()
+    @Environment(CharactersVM.self) var charactersVM
+    @Environment(HousesVM.self) var housesVM
+    @Environment(BooksVM.self) var booksVM
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
@@ -19,6 +22,8 @@ struct CharacterListView: View {
                         
                         NavigationLink {
                             CharacterDetailView(character: character)
+                                .environment(booksVM)
+                                .environment(housesVM)
                         } label: {
                             Text(nameOrAlias(name: character.name!, aliases: character.aliases!))
                                 .font(.title2)
@@ -70,8 +75,9 @@ struct CharacterListView: View {
                 //            }
             }
             .task {
-                charactersVM.getData()
-                print("Data Loaded --> Count: \(charactersVM.characters.count)")
+                // Disabled becase charactersVM is passed from the LaunchVM via @Environment
+//                charactersVM.getData()
+//                print("Data Loaded --> Count: \(charactersVM.characters.count)")
             }
             .padding()
             
@@ -89,6 +95,7 @@ struct CharacterListView: View {
     }
 }
 
-#Preview {
-    CharacterListView()
-}
+// Disable becase of @Environment charactersVM being passed from LaunchView
+//#Preview {
+//    CharacterListView()
+//}
