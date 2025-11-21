@@ -84,7 +84,7 @@ struct CharacterListView: View {
             
         }
     }
-    var searchResults: [Character] {
+    var searchResults: [IandFCharacter] {
         if searchText.isEmpty {
             return charactersVM.characters
         } else {    // There is searchText data
@@ -96,6 +96,6 @@ struct CharacterListView: View {
 }
 
 // Disable becase of @Environment charactersVM being passed from LaunchView
-//#Preview {
+//#Preview(traits: .mockData) {
 //    CharacterListView()
 //}

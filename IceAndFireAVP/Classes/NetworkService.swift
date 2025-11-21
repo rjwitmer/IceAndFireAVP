@@ -52,7 +52,7 @@ class NetworkService {
         return books
     }
     
-    func fetchCharacterData() async throws -> [Character] {
+    func fetchCharacterData() async throws -> [IandFCharacter] {
         guard isConnected else {
             throw NetworkError.noInternetConnection
         }
@@ -69,7 +69,7 @@ class NetworkService {
         print("HTTP Status: \(httpResponse.statusCode)")
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        let characters = try decoder.decode([Character].self, from: data)
+        let characters = try decoder.decode([IandFCharacter].self, from: data)
         if characters.isEmpty {
             characterIsDoneLoading = true
             return []
@@ -107,9 +107,9 @@ class NetworkService {
 
     }
     
-    func loadAllCharacters() async throws -> [Character] {
+    func loadAllCharacters() async throws -> [IandFCharacter] {
         
-        var allCharacters: [Character] = []
+        var allCharacters: [IandFCharacter] = []
         while !characterIsDoneLoading {
             let moreCharacters = try await self.fetchCharacterData()
             allCharacters.append(contentsOf: moreCharacters)

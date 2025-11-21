@@ -16,7 +16,7 @@ struct CharacterDetailView: View {
     @State private var selectActor: Int = 0
     @State private var selectBook: Int = 0
     @State private var selectHouse: Int = 0
-    let character: Character
+    let character: IandFCharacter
     var body: some View {
         VStack {
             Text(nameOrAlias(name: character.name!, aliases: character.aliases!))

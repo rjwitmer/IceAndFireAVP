@@ -5,16 +5,28 @@
 //  Created by Bob Witmer on 2025-11-07.
 //
 
-import Foundation
+import SwiftUI
 
 @Observable
 class CharactersVM {
-    var characters: [Character] = []
+    var characters: [IandFCharacter] = []
     var doneLoading: Bool = false
     var errorMessage: String?
     
     var networkService: NetworkService = NetworkService()
     var isLoading: Bool = false
+    
+    init(characters: [IandFCharacter], doneLoading: Bool, errorMessage: String? = nil, networkService: NetworkService, isLoading: Bool) {
+        self.characters = characters
+        self.doneLoading = doneLoading
+        self.errorMessage = errorMessage
+        self.networkService = networkService
+        self.isLoading = isLoading
+    }
+    
+    convenience init () {
+        self.init(characters: [], doneLoading: false, networkService: NetworkService(), isLoading: false)
+    }
     
     func getData() {
         guard !doneLoading else { return }
@@ -32,7 +44,7 @@ class CharactersVM {
                         
                         self.characters = self.characters + decodedData
                         print("Total Characters: \(self.characters.count)")
-
+                        self.doneLoading = true
                         self.isLoading = false
                     }
                     
@@ -51,8 +63,9 @@ class CharactersVM {
         
         Task {
             self.characters = try await networkService.loadAllCharacters()
+            doneLoading = true
         }
-        doneLoading = true
+        
     }
     
 }

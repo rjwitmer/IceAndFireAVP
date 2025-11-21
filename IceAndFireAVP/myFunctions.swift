@@ -19,7 +19,7 @@ func nameOrAlias(name: String, aliases: [String]) -> String {
 }
 
 // Function to return Character Name or Alias from the matching url string
-func characterNameFromURL(characters: [Character], url: String) -> String {
+func characterNameFromURL(characters: [IandFCharacter], url: String) -> String {
     if characters.isEmpty {
         return "Unknown Character"
     } else {

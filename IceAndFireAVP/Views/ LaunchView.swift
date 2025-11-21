@@ -51,17 +51,23 @@ struct ContentView: View {
                     
                     ProgressView()
                         .tint(Color.red)
-                        .scaleEffect(1.0)
+                        .scaleEffect(2.0)
                     
                     VStack(alignment: .leading) {
                         if !charactersVM.doneLoading {
                             Text("Loading Character Data...")
+                                .font(.largeTitle)
+                                .foregroundColor(.red)
                         }
                         if !housesVM.doneLoading {
                             Text("Loading House Data...")
+                                .font(.largeTitle)
+                                .foregroundColor(.red)
                         }
                         if !booksVM.doneLoading {
                             Text("Loading Book Data...")
+                                .font(.largeTitle)
+                                .foregroundColor(.red)
                         }
                     }
                 }

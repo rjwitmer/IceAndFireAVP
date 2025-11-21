@@ -1,5 +1,5 @@
 //
-//  Character.swift
+//  IandFCharacter.swift
 //  IceAndFireAVP
 //
 //  Created by Bob Witmer on 2025-11-05.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character: Codable, Identifiable {
+struct IandFCharacter: Codable, Identifiable {
     let id: String = UUID().uuidString
     let url: String
     let name: String?

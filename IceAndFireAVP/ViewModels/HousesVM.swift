@@ -32,7 +32,7 @@ class HousesVM {
                         
                         self.houses = self.houses + decodedData
                         print("Total Characters: \(self.houses.count)")
-
+                        self.doneLoading = true
                         self.isLoading = false
                     }
                     
@@ -50,7 +50,7 @@ class HousesVM {
     func loadAll() {        
         Task {
             self.houses = try await networkService.loadAllHouses()
+            doneLoading = true
         }
-        doneLoading = true
     }
 }
